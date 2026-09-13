@@ -1,17 +1,22 @@
-import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Bounce, toast } from 'react-toastify';
 import type TechnologyType from '../Types/TechnologyType';
 
 export interface TechnologyCardProps {
   technology: TechnologyType;
+  selectedTechnologies: TechnologyType[];
+  setSelectedTechnologies: React.Dispatch<React.SetStateAction<TechnologyType[]>>;
 }
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
-  const [isSelected, setIsSelected] = useState<boolean>(false);
+const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnologies }: TechnologyCardProps) => {
+  const isSelected = selectedTechnologies.some(
+    (selectedTechnology) => selectedTechnology.id === technology.id
+  );
 
   const handleSelectTechnology = () => {
-    setIsSelected(true);
+    if (isSelected) {
+      return;
+    }
 
     toast.success(`${technology.name} added to stack!`, {
       position: 'top-right',
@@ -23,6 +28,19 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
       progress: undefined,
       theme: 'colored',
       transition: Bounce,
+    });
+
+    // SelectedTechnologies Array Update 
+    setSelectedTechnologies((prevTechnologies) => {
+      const alreadySelected = prevTechnologies.some(
+        (selectedTechnology) => selectedTechnology.id === technology.id
+      );
+
+      if (alreadySelected) {
+        return prevTechnologies;
+      }
+
+      return [...prevTechnologies, technology];
     });
   };
 
@@ -80,7 +98,7 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
       <button
         onClick={handleSelectTechnology}
         disabled={isSelected}
-        className="btn h-12 min-h-12 w-full rounded-xl border-0 bg-[#080d1d] text-base font-semibold text-white shadow-none transition-all duration-200 hover:bg-[#111827] hover:scale-[1.01] disabled:bg-[#080d1d] disabled:text-white"
+        className="btn h-12 min-h-12 w-full rounded-xl border-0 bg-[#080d1d] text-base font-semibold text-white shadow-none transition-all duration-200 hover:bg-[#111827] hover:scale-[1.01] disabled:bg-[#a9a8a8] disabled:text-white"
       >
         {isSelected ? 'Selected' : 'Add to Stack'}
       </button>

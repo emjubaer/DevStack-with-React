@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import './App.css'
 import HeroSection from './Components/HeroSection'
 import Navbar from './Components/Navbar'
@@ -11,6 +11,8 @@ const technologyPromise: Promise<TechnologyType[]> = fetch('/technologyData.json
 
 
 function App() {
+  // Selected Technologies Array 
+  const [selectedTechnologies, setSelectedTechnologies] = useState<TechnologyType[]>([]);
 
   return (
     <>
@@ -24,12 +26,12 @@ function App() {
 
             {/* Technogies Component is rendered here  */}
             <div className="lg:col-span-3">
-              <Technologies technologyPromise={technologyPromise} />
+              <Technologies technologyPromise={technologyPromise} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} />
             </div>
 
             {/* YourStack Component is rendered here  */}
             <div className="lg:col-span-1">
-              <YourStack />
+              <YourStack selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} />
             </div>
 
           </div>

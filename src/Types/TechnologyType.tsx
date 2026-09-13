@@ -1,4 +1,4 @@
-interface TechnologyType {
+export default interface TechnologyType {
   id: string;
   name: string;
   category: string;
@@ -8,4 +8,3 @@ interface TechnologyType {
   difficulty: "Beginner-Friendly" | "Intermediate" | "Advanced";
   badge: string;
 }
-export default TechnologyType;
