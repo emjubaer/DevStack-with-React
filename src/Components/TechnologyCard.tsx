@@ -106,5 +106,4 @@ const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnolog
     </div>
   );
 };
-
 export default TechnologyCard;

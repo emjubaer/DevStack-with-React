@@ -9,6 +9,7 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  
   return (
     <nav className="border-b  border-gray-100 relative">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">

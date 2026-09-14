@@ -18,5 +18,4 @@ const Technologies = ({ technologyPromise, selectedTechnologies, setSelectedTech
         </div>
     );
 };
-
 export default Technologies;

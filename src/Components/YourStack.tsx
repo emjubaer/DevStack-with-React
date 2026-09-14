@@ -81,5 +81,4 @@ const YourStack = ({ selectedTechnologies, setSelectedTechnologies }: YourStackP
         </div>
     );
 };
-
 export default YourStack;
