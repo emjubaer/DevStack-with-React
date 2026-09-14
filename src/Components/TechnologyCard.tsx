@@ -100,7 +100,7 @@ const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnolog
         disabled={isSelected}
         className="btn h-12 min-h-12 w-full rounded-xl border-0 bg-[#080d1d] text-base font-semibold text-white shadow-none transition-all duration-200 hover:bg-[#111827] hover:scale-[1.01] disabled:bg-[#a9a8a8] disabled:text-white"
       >
-        {isSelected ? 'Selected' : 'Add to Stack'}
+        {isSelected ? '✓ Added to Stack' : 'Add to Stack'}
       </button>
 
     </div>

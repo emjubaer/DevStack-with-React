@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar'
 import Technologies from './Components/Technologies'
 import YourStack from './Components/YourStack'
 import type TechnologyType from './Types/TechnologyType'
+import Footer from './Components/Footer'
 
 const technologyPromise: Promise<TechnologyType[]> = fetch('/technologyData.json')
   .then((res) => res.json())
@@ -18,9 +19,15 @@ function App() {
     <>
       <div className="w-full bg-white ">
 
-        <Navbar />
+        {/* Navbar Section  */}
+        <div className="fixed top-0 left-0 w-full z-50 bg-white">
+          <Navbar />
+
+        </div>
+        {/* Hero Section  */}
         <HeroSection />
 
+        {/* Technologies and YourStack Sections  */}
         <Suspense fallback={<div>Loading...</div>}>
           <div className=" bg-white max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
 
@@ -36,6 +43,9 @@ function App() {
 
           </div>
         </Suspense>
+
+        {/* Footer Section  */}
+        <Footer />
 
 
       </div>

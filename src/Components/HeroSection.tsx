@@ -2,7 +2,7 @@ import bannerImage from '../assets/banner-stack.png';
 
 const HeroSection = () => {
     return (
-        <div className="w-full bg-white">
+        <div className="w-full bg-white mt-8">
             <section className="w-full max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-1">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
