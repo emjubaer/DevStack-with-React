@@ -118,5 +118,16 @@
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
     "badge": "API"
+  },
+   {
+    "id": "ruby",
+    "name": "Ruby",
+    "category": "Language",
+    "description": "A dynamic, open-source programming language with a focus on simplicity and productivity.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Ruby.svg",
+    "rating": 4.7,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Popular"
   }
 ]
+
